@@ -1,3 +1,19 @@
 body{
     background-image: url("../kepek/hatterkep.jpg");
+
+    
+}
+#papiros{
+    background-image: url("../kepek/papirlap.png");
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 400px;
+    height: 800px;
+    text-align: center;
+    padding: 20px;
+    font-size: large;
+}
+.papircim{
+    font-family: 'Rye' ;
+    font-weight: bolder;
 }
