@@ -5,13 +5,12 @@ body{
 }
 #papiros{
     background-image: url("../kepek/papirlap.png");
-    background-repeat: repeat-y;
-    overflow: auto;
+    background-repeat: no-repeat;
     margin: auto;
     width: 400px;
-    height: 550px;
+    height: 800px;
     text-align: center;
-    padding: 20px;
+    padding: 70px;
     font-size: large;
 }
 .papircim{
