@@ -1,7 +1,7 @@
 body{
     background-image: url("../kepek/hatterkep.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
+    
 }
 #papiros{
     background-image: url("../kepek/papirlap.png");
@@ -17,4 +17,8 @@ body{
 .papircim{
     font-family: 'Rye' ;
     font-weight: bolder;
+}
+#text{
+    height: 500px;
+    overflow: hidden;
 }
