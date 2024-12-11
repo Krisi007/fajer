@@ -1,14 +1,15 @@
 body{
     background-image: url("../kepek/hatterkep.jpg");
-
-    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 #papiros{
     background-image: url("../kepek/papirlap.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+    overflow: auto;
     margin: auto;
     width: 400px;
-    height: 800px;
+    height: 550px;
     text-align: center;
     padding: 20px;
     font-size: large;
