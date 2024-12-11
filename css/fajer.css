@@ -1,16 +1,20 @@
 body{
     background-image: url("../kepek/hatterkep.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
     
 }
 #papiros{
-    background-image: url("../kepek/papirlap.png");
+    background-image: url("../kepek/papirjo-removebg.png");
     background-repeat: no-repeat;
     margin: auto;
-    width: 400px;
-    height: 800px;
+    width: 900px;
+    height: 1400px;
     text-align: center;
-    padding: 20px;
+    padding: 70px;
     font-size: large;
 }
 .papircim{
