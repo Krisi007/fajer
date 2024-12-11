@@ -1,9 +1,5 @@
 body{
     background-image: url("../kepek/hatterkep.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 
     
 }
@@ -20,4 +16,8 @@ body{
 .papircim{
     font-family: 'Rye' ;
     font-weight: bolder;
+}
+#text{
+    height: 500px;
+    overflow: hidden;
 }
