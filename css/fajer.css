@@ -19,8 +19,8 @@ body{
 #szoveg{
     border: 1px black solid;
     height: 900px;
-    
     background: rgba(146, 95, 58 , 0.5);
+    margin-top: 40px;
 }
 .papircim{
     text-align: center;
@@ -96,4 +96,7 @@ p{
 }
 b{
   color: black;
+}
+.ha{
+  font-style: italic;
 }
