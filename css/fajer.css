@@ -60,3 +60,7 @@ body{
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {background-color: black;}
+
+.link{
+  text-align: center;
+}
