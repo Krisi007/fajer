@@ -89,7 +89,7 @@ const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
         }
 
         function bidPhase() {
-            bids = players.map(() => Math.floor(Math.random() * 100) + 1); // Random bids for simplicity
+            bids = players.map(() => Math.floor(Math.random() * 100) + 1); // Random tét
             const bidsContainer = document.getElementById('bids');
             bidsContainer.innerHTML = '<h3>Licitálás</h3>';
             bids.forEach((bid, index) => {
