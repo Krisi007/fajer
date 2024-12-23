@@ -17,6 +17,10 @@ body{
     text-align: center;
     text-transform: uppercase;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
+    /*Scrollbar láthatatlan*/
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;    
 }
 #szoveg{
     border: 1px black solid;
