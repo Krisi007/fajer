@@ -110,7 +110,7 @@ function calculateHandValue(cards) {
     }, 0);
 }
 
-function determineWinner() {
+function Winner() {
     const handValues = players.map(calculateHandValue);
     const maxBid = Math.max(...bids);
     const highestBidder = bids.indexOf(maxBid);
