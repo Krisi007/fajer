@@ -24,14 +24,14 @@ const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
 
         function dealCards() {
             players = [];
-            for (let i = 0; i < 5; i++) { // 5 játékos
+            for (let i = 0; i < 5; i++) { 
                 const playerCards = [];
-                for (let j = 0; j < 3; j++) { // Minden játékosnak 3 lap
+                for (let j = 0; j < 3; j++) { 
                     playerCards.push(deck.pop());
                 }
                 players.push(playerCards);
             }
-            bids = Array(5).fill(0); // Reset bids for all players
+            bids = Array(5).fill(0); 
         }
 
         function renderPlayerCards() {
@@ -77,7 +77,7 @@ const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
         }
 
         function nextRound() {
-            if (deck.length < 15) { // 5 játékos x 3 lap
+            if (deck.length < 15) { 
                 document.getElementById('message').textContent = 'Nincs elég lap a következő körhöz!';
                 return;
             }
@@ -89,16 +89,16 @@ const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
         }
 
         function bidPhase() {
-            bids = players.map(() => Math.floor(Math.random() * 100) + 1); // Random tét
+            bids = players.map(() => Math.floor(Math.random() * 100) + 1); 
             const bidsContainer = document.getElementById('bids');
             bidsContainer.innerHTML = '<h3>Licitálás</h3>';
             bids.forEach((bid, index) => {
                 const bidDiv = document.createElement('div');
                 bidDiv.textContent = `Játékos ${index + 1}: ${bid} pont`;
                 bidsContainer.appendChild(bidDiv);
-                bank += bid; // Hozzáadás a kasszához
+                bank += bid; 
             });
-            document.getElementById('bank').textContent = bank; // Közös kassza frissítése
+            document.getElementById('bank').textContent = bank; 
             document.getElementById('message').textContent = 'Licitálás lezárult!';
         }
 
@@ -120,11 +120,11 @@ const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
 
             let winnerIndex = highestBidder;
             if (handValues.filter(value => value === handValues[highestBidder]).length > 1) {
-                winnerIndex = players.length - 1; // Default to dealer if tie
+                winnerIndex = players.length - 1; 
             }
 
             document.getElementById('winner').textContent = `A győztes: Játékos ${winnerIndex + 1}! Nyeremény: ${bank} $.`;
             document.getElementById('message').textContent = 'A játék véget ért!';
-            bank = 0; // Közös kassza kiürítése
+            bank = 0; 
             document.getElementById('bank').textContent = bank;
         }
