@@ -16,6 +16,22 @@ h1 {
     text-shadow: 2px 2px 4px #000;
 }
 
+#bank-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#bank {
+    font-size: 24px;    
+    font-weight: bold;
+    color: #ffd700;
+}
+
 .game-container {
     background: #2b2b2b;
     padding: 20px;

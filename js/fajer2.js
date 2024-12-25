@@ -4,6 +4,7 @@ const ranks = [7, 8, 9, 10, 'Alsó', 'Felső', 'Király', 'Ász'];
 let deck = [];
 let players = [];
 let bids = [];
+let bank = 0;
 
 function initializeDeck() {
     deck = [];
@@ -95,7 +96,9 @@ function bidPhase() {
         const bidDiv = document.createElement('div');
         bidDiv.textContent = `Játékos ${index + 1}: ${bid} pont`;
         bidsContainer.appendChild(bidDiv);
+        bank += bid;
     });
+    document.getElementById('bank').textContent = bank;
     document.getElementById('message').textContent = 'Licitálás lezárult!';
 }
 
@@ -120,6 +123,8 @@ function Winner() {
         winnerIndex = players.length - 1; 
     }
 
-    document.getElementById('winner').textContent = `A győztes: Játékos ${winnerIndex + 1}!`;
+    document.getElementById('winner').textContent = `A győztes: Játékos ${winnerIndex + 1}! Nyeremény: ${bank} $.`;
     document.getElementById('message').textContent = 'A játék véget ért!';
+    bank = 0;
+    document.getElementById('bank').textContent = bank;
 }
