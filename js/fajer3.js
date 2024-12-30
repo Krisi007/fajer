@@ -1,4 +1,4 @@
-const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
+const kartyak = ['Piros', 'Zöld', 'Tök', 'Makk'];
 const ranks = [7, 8, 9, 10, 'Alsó', 'Felső', 'Király', 'Ász'];
 
 let deck = [];
@@ -8,7 +8,7 @@ let bank = 0;
 
 function initializeDeck() {
     deck = [];
-    for (const suit of suits) {
+    for (const suit of kartyak) {
         for (const rank of ranks) {
             deck.push(`${rank} (${suit})`);
         }

@@ -10,7 +10,7 @@ function initializeDeck() {
     pakli = [];
     for (const kartya of kartyak) {
         for (const ertek of ertekek) {
-            pakli.push(`${ertek} (${kartyak})`);
+            pakli.push(`${ertek} (${kartya})`);
         }
     }
 }
