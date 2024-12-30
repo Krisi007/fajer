@@ -8,9 +8,9 @@ let bank = 0;
 
 function initializeDeck() {
     pakli = [];
-    for (const suit of kartyak) {
-        for (const rank of ertekek) {
-            pakli.push(`${rank} (${suit})`);
+    for (const kartya of kartyak) {
+        for (const ertek of ertekek) {
+            pakli.push(`${ertek} (${kartyak})`);
         }
     }
 }
