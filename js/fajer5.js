@@ -94,7 +94,7 @@ function bidPhase() {
     bidsContainer.innerHTML = '<h3>Licitálás</h3>';
     tetek.forEach((bid, index) => {
         const bidDiv = document.createElement('div');
-        bidDiv.textContent = `Játékos ${index + 1}: ${bid} pont`;
+        bidDiv.textContent = `Játékos ${index + 1}: ${bid} $`;
         bidsContainer.appendChild(bidDiv);
         bank += bid; 
     });
