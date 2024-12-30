@@ -1,37 +1,37 @@
-const suits = ['Piros', 'Zöld', 'Tök', 'Makk'];
-const ranks = [7, 8, 9, 10, 'Alsó', 'Felső', 'Király', 'Ász'];
+const kartyak = ['Piros', 'Zöld', 'Tök', 'Makk'];
+const ertekek = [7, 8, 9, 10, 'Alsó', 'Felső', 'Király', 'Ász'];
 
-let deck = [];
-let players = [];
-let bids = [];
+let pakli = [];
+let jatekosok = [];
+let tetek = [];
 let bank = 0;
 
 function initializeDeck() {
-    deck = [];
-    for (const suit of suits) {
-        for (const rank of ranks) {
-            deck.push(`${rank} (${suit})`);
+    pakli = [];
+    for (const kartya of kartyak) {
+        for (const ertek of ertekek) {
+            pakli.push(`${ertek} (${kartya})`);
         }
     }
 }
 
 function shuffleDeck() {
-    for (let i = deck.length - 1; i > 0; i--) {
+    for (let i = pakli.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [deck[i], deck[j]] = [deck[j], deck[i]];
+        [pakli[i], pakli[j]] = [pakli[j], pakli[i]];
     }
 }
 
 function dealCards() {
-    players = [];
+    jatekosok = [];
     for (let i = 0; i < 4; i++) { 
         const playerCards = [];
         for (let j = 0; j < 3; j++) { 
-            playerCards.push(deck.pop());
+            playerCards.push(pakli.pop());
         }
-        players.push(playerCards);
+        jatekosok.push(playerCards);
     }
-    bids = Array(4).fill(0); 
+    tetek = Array(4).fill(0); 
 }
 
 function renderPlayerCards() {
@@ -40,7 +40,7 @@ function renderPlayerCards() {
     topRow.innerHTML = '';
     bottomRow.innerHTML = '';
 
-    players.forEach((player, index) => {
+    jatekosok.forEach((player, index) => {
         const playerDiv = document.createElement('div');
         playerDiv.className = 'player';
         const playerTitle = document.createElement('div');
@@ -77,7 +77,7 @@ function startGame() {
 }
 
 function nextRound() {
-    if (deck.length < 12) { 
+    if (pakli.length < 12) { 
         document.getElementById('message').textContent = 'Nincs elég lap a következő körhöz!';
         return;
     }
@@ -89,12 +89,12 @@ function nextRound() {
 }
 
 function bidPhase() {
-    bids = players.map(() => Math.floor(Math.random() * 100) + 1); 
+    tetek = jatekosok.map(() => Math.floor(Math.random() * 100) + 1); 
     const bidsContainer = document.getElementById('bids');
     bidsContainer.innerHTML = '<h3>Licitálás</h3>';
-    bids.forEach((bid, index) => {
+    tetek.forEach((bid, index) => {
         const bidDiv = document.createElement('div');
-        bidDiv.textContent = `Játékos ${index + 1}: ${bid} pont`;
+        bidDiv.textContent = `Játékos ${index + 1}: ${bid} $`;
         bidsContainer.appendChild(bidDiv);
         bank += bid;
     });
@@ -114,13 +114,13 @@ function calculateHandValue(cards) {
 }
 
 function Winner() {
-    const handValues = players.map(calculateHandValue);
-    const maxBid = Math.max(...bids);
-    const highestBidder = bids.indexOf(maxBid);
+    const handValues = jatekosok.map(calculateHandValue);
+    const maxBid = Math.max(...tetek);
+    const highestBidder = tetek.indexOf(maxBid);
 
     let winnerIndex = highestBidder;
     if (handValues.filter(value => value === handValues[highestBidder]).length > 1) {
-        winnerIndex = players.length - 1; 
+        winnerIndex = jatekosok.length - 1; 
     }
 
     document.getElementById('winner').textContent = `A győztes: Játékos ${winnerIndex + 1}! Nyeremény: ${bank} $.`;
