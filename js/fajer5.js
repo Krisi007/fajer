@@ -40,7 +40,7 @@ function renderPlayerCards() {
     topRow.innerHTML = '';
     bottomRow.innerHTML = '';
 
-    jatekosok.forEach((player, index) => {
+    jatekosok.forEach((jatekos, index) => {
         const playerDiv = document.createElement('div');
         playerDiv.className = 'player';
         const playerTitle = document.createElement('div');
@@ -49,7 +49,7 @@ function renderPlayerCards() {
 
         const cardsDiv = document.createElement('div');
         cardsDiv.className = 'cards';
-        player.forEach(card => {
+        jatekos.forEach(card => {
             const cardElement = document.createElement('div');
             cardElement.className = 'card';
             cardElement.textContent = card;
@@ -92,11 +92,11 @@ function bidPhase() {
     tetek = jatekosok.map(() => Math.floor(Math.random() * 100) + 1); 
     const bidsContainer = document.getElementById('bids');
     bidsContainer.innerHTML = '<h3>Licitálás</h3>';
-    tetek.forEach((bid, index) => {
+    tetek.forEach((tet, index) => {
         const bidDiv = document.createElement('div');
-        bidDiv.textContent = `Játékos ${index + 1}: ${bid} $`;
+        bidDiv.textContent = `Játékos ${index + 1}: ${tet} $`;
         bidsContainer.appendChild(bidDiv);
-        bank += bid; 
+        bank += tet; 
     });
     document.getElementById('bank').textContent = bank;
     document.getElementById('message').textContent = 'Licitálás lezárult!';
